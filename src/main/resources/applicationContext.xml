@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+        <context:component-scan base-package="polymorphism"/>
         <!--  어쩔티비 객체 생성  -->
-        <bean id="tv" class ="polymorphism.어쩔TV">
-                <constructor-arg ref = "sony"/>
-                <constructor-arg value = "270000"/>
-        </bean>
-        <!--  소니스피커 객체 생성  -->
-        <bean id = "sony" class ="polymorphism.SonySpeaker"/>
-
+<!--        <bean id="tv" class ="polymorphism.어쩔TV">-->
+<!--                <property name="speaker" ref="apple"/>-->
+<!--                <property name="price" value="2700000"/>-->
+<!--&lt;!&ndash;                <constructor-arg ref = "apple"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <constructor-arg value = "270000"/>&ndash;&gt;-->
+<!--        </bean>-->
+<!--        &lt;!&ndash;  소니스피커 객체 생성  &ndash;&gt;-->
+<!--        <bean id = "sony" class ="polymorphism.SonySpeaker"/>-->
+<!--        &lt;!&ndash;애플스피커 객체 생성&ndash;&gt;-->
+<!--        <bean id = "apple" class = "polymorphism.AppleSpeaker"/>-->
 </beans>

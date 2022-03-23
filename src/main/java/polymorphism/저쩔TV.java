@@ -1,6 +1,15 @@
 package polymorphism;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("tv")
+
 public class 저쩔TV implements TV {
+
+    @Autowired
+    private Speaker speaker;
+
     public void powerOn(){
         System.out.println("저쩔티비 ----전원켠다.");
     }
@@ -8,9 +17,9 @@ public class 저쩔TV implements TV {
         System.out.println("저쩔티비 ----전원끈다.");
     }
     public void volumeUp(){
-        System.out.println("저쩔티비 ----소리를 올린다.");
+        speaker.volumeUp();
     }
     public void volumeDown(){
-        System.out.println("저쩔티비 ----소시를 내린다.");
+       speaker.volumeDown();
     }
 }
